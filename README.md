@@ -1,24 +1,28 @@
 # Tambola Claim Validator
 
 ## Overview
+Tambola is a game that is widely played across the world. To participate in a round, players
+are given tickets (shown below) which have numbers on them. A round has multiple games
+in it. A round is complete when all games are complete. As numbers are announced by a
+dealer at random, players match the numbers with those on the ticket and cross them. If
+they have crossed all numbers needed to win a game, they can claim to be the winner of the
+game.
 
-This project provides a set of validators for the Tambola (Housie) game, focusing on validating various types of claims, including Full House claims. The validators check if the claims meet the required conditions based on the announced numbers and the ticket's numbers.
+## Problem statement: Claim validator
 
-## Project Structure
+**Input**: Numbers announced so far, a valid ticket and claim for a specific game.
+**Output**: Accepted/Rejected
 
-- **`FullHouseValidator`**: Validates if a ticket's claim is a full house by checking if all numbers on the ticket are announced and if the last announced number is present on the ticket. Utilizes individual line validators for top, middle, and bottom lines.
+### `Games`:
+  Each round has multiple games. Each game has a winning pattern.
+* Top line: The ticket with all the numbers of the top row crossed fastest
+* Middle line: The ticket with all the numbers of the middle row crossed fastest
+* Bottom line: The ticket with the numbers of the bottom row crossed fastest
+* Full house: The ticket with all the 15 numbers crossed first
+* Early five: The fastest ticket to have 5 numbers crossed
 
+### `Games`:
+* System only has to return whether a claim is accepted or rejected
+* A player's claim to victory is only valid if it is made immediately following the
+announcement of the number that completes their winning sequence.
 
-- **`ClaimValidator`**: An interface that defines the contract for validating claims.
-
-
-- **`ClaimValidatorFactory`**: A factory class to obtain instances of line validators (TopLine, MiddleLine, BottomLine) based on the claim type.
-
-
-- **`Ticket`**: Represents a Tambola ticket containing a 3x9 matrix of numbers.
-
-
-- **`ClaimStatus`**: Represents the status of a claim (Accepted or Rejected).
-
-
-- **`TambolaModerator`**: Manages the game state and performs claim validations.
