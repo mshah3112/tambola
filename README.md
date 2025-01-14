@@ -21,8 +21,17 @@ game.
 * Full house: The ticket with all the 15 numbers crossed first
 * Early five: The fastest ticket to have 5 numbers crossed
 
-### `Games`:
+### `Rules`:
 * System only has to return whether a claim is accepted or rejected
 * A player's claim to victory is only valid if it is made immediately following the
 announcement of the number that completes their winning sequence.
 
+### Command - Clean & rebuild
+```
+mvn clean install
+```
+
+### Command - Only Test
+```
+mvn test
+```
