@@ -3,7 +3,7 @@ package com.sahaj.factory;
 import java.util.EnumMap;
 
 import com.sahaj.enums.ClaimType;
-import com.sahaj.validator.BottamLineValidator;
+import com.sahaj.validator.BottomLineValidator;
 import com.sahaj.validator.ClaimValidator;
 import com.sahaj.validator.EarlyFiveValidator;
 import com.sahaj.validator.FullHouseValidator;
@@ -27,7 +27,7 @@ public class ClaimValidatorFactory {
     static {
         claimMap.put(ClaimType.TOP_LINE, new TopLineValidator());
         claimMap.put(ClaimType.MIDDLE_LINE, new MiddleLineValidator());
-        claimMap.put(ClaimType.BOTTOM_LINE, new BottamLineValidator());
+        claimMap.put(ClaimType.BOTTOM_LINE, new BottomLineValidator());
         claimMap.put(ClaimType.EARLY_FIVE, new EarlyFiveValidator());
         claimMap.put(ClaimType.FULL_HOUSE, new FullHouseValidator());
     }
